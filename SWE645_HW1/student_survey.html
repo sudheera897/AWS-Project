@@ -1,0 +1,389 @@
+ <!DOCTYPE html>
+<html>
+
+<header class="w3-container w3 w3-center" style="text-align: center;" ></header>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-darkness/jquery-ui.css">
+
+<style>
+
+body{
+    background-color: #f8f8ff;
+}
+
+h1{
+    text-align: center;
+    font-size: 38px;
+}
+
+h2{
+    text-align: center;
+    font-size: 28px;
+}
+
+#content{
+    position: relative;
+}
+#content img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 150px;
+    height: 150px;
+}
+
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 1000px;
+
+  /* Form outline */
+  padding: 1em;
+  border: 2px solid #CCC;
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 170px;
+  text-align: left;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     as by default, textareas have a monospace font */
+  font: 1em sans-serif;
+  /* Uniform text field size */
+  box-sizing: border-box;
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: #000;
+}
+
+input[type=checkbox]{
+        vertical-align: left;
+        position: relative;
+        bottom: 1px;
+        padding-left: 0px;
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+.button {
+  /* Align buttons with the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  margin-left: .5em;
+}
+
+.required {
+  color: red;
+}
+
+.boxed {
+  border: 3px solid rgb(179, 182, 179) ;
+  width: 1000px;
+  height: 80px;
+  align-content: center;
+  margin: 0 auto;
+  background-color: #d7e1df;
+}
+
+</style>
+</head>
+
+<script>
+  $(document).ready(function() 
+  {
+    $("#gmu_link").tabs({
+      active: 0
+    })
+  })
+</script>
+
+<body>
+
+<!-- Create a Form -->
+<br><br>
+<h1 style="text-underline-position: below; font-family:Verdana, Geneva, Tahoma, sans-serif;">SURVEY FORM</h1>
+
+<div id="gmu_link" style="text-align: center;" class="boxed">
+  <ul>
+      <li><a href="https://volgenau.gmu.edu/">Volgenau School of Engineering</a></li>
+      <li><a href="https://cs.gmu.edu/">Computer Science Department</a></li>
+      <li><a href="http://swe645-sud-hw-1.s3-website-us-east-1.amazonaws.com">My Home Page</a></li>
+  </ul>
+</div>
+
+<br>
+
+<p style="padding-left: 222px;">Please note that all fields marked <span class="required">*</span> are required.</p>
+
+<!-- Create FORM -->
+<form name="StudentForm" action="/action.php" method="post" autocomplete="on">
+  <ul>
+  <li>
+    <label for="name">First Name<span class="required">*</span>:</label>
+    <input type="text" id="fname" name="fname" style="width: 300px;" placeholder="Type your first name here" autofocus required />
+  </li>
+
+  <li>
+    <label for="name">Last Name<span class="required">*</span>:</label>
+    <input type="text" id="lname" name="lname" style="width: 300px;" placeholder="Type your last name here" required />
+  </li>
+
+   <li>
+    <label for="name">Street Address<span class="required">*</span>:</label>
+    <input type="text" id="street_address" name="street_address" style="width: 300px;" placeholder="Enter your address here" required />
+  </li>
+
+  <li>
+    <label for="name">City<span class="required">*</span>:</label>
+    <input type="text" id="city" name="City" style="width: 300px;" placeholder="Enter your City" required />
+  </li>
+
+   <li>
+    <label for="name">State<span class="required">*</span>:</label>
+    <input type="text" id="state" name="State" style="width: 300px;" placeholder="Enter your State" required />
+  </li>
+
+   <li>
+    <label for="name">Zip<span class="required">*</span>:</label>
+    <input type="number" id="zip" name="zip_code" style="width: 300px;" placeholder="Enter only in numbers" required />
+  </li>
+
+   <li>
+    <label for="name">Telephone Number<span class="required">*</span>:</label>
+    <input type="number" id="number" name="telephone_number" style="width: 300px;" placeholder="Enter only in numbers" minlength="10" maxlength="10" required />
+  </li>
+
+  <li>
+    <label for="mail">E-mail<span class="required">*</span>:</label>
+    <input type="email" id="mail" name="user_email" style="width: 300px;" placeholder="Enter in the format example@xyz.com" required />
+  </li>
+
+   <li>
+    <label for="mail">URL:</label>
+    <input type="url" id="url" name="url" style="width: 300px;" placeholder="E.g. http://www.google.com" />
+  </li><br><br>
+ </ul>
+
+
+ <!-- Radio Buttons -->
+ <p>If you are a prospective student then please indicate how you became interested in the university:</p>
+
+ <input type="radio" name="rbox" id="friends" value="FRIENDS" /> 
+ <label for="friends">Friends</label><br>
+
+ <input type="radio" name="rbox" id="television" value="TELEVISION" /> 
+ <label for="television">Television</label><br>
+
+ <input type="radio" name="rbox" id="internet" value="INTERNET" /> 
+ <label for="internet">Internet</label><br>
+
+ <input type="radio" name="rbox" id="other" value="OTHER" /> 
+ <label for="other">Other</label><br><br>
+
+
+ <!-- Checkbox Selection -->
+ <p>Please indicate what you liked the most about the campus:</p>
+
+<ul>
+    <li>
+        <input type="checkbox" id="students" name="cBox" value="Students" style="padding-left: 0px;" /><label for="students">Students</label><br>
+        <input type="checkbox" id="location" name="cBox" value="Location" /><label for="location">Location</label><br>
+        <input type="checkbox" id="campus" name="cBox" value="Campus" /><label for="campus">Campus</label><br>
+        <input type="checkbox" id="atmosphere" name="cBox" value="Atmosphere" /><label for="atmosphere">Atmosphere</label><br>
+        <input type="checkbox" id="dorm rooms" name="cBox" value="Dorm Rooms" /><label for="dorm rooms">Dorm Rooms</label><br>
+        <input type="checkbox" id="sports" name="cBox" value="Sports" /><label for="sports">Sports</label><br><br>
+    </li>
+</ul>
+
+ 
+<!-- Dropdown List-->
+<p>Please provide your likelihood of recommending this school to other prospective students:</p>
+<label for="recommendation">Recommendation:</label>
+  <select name="recommendation" id="recommendation">
+    <option value="very_likely">Very Likely</option>
+    <option value="likely">Likely</option>
+    <option value="unlikely">Unlikely</option>
+  </select>
+  <br><br><br>
+
+
+  <!-- Data of Survey-->
+<label for="graduation_date">Date of Survey<span class="required">*</span>:</label>
+<input type="date" id="graduation_date" name="graduation_date" >
+
+<br><br>
+
+<ul>
+    <li>
+        <br><label for="msg">Additional Comments:</label>
+        <textarea id="msg" name="user_comments" style="width: 300px;" placeholder="Please enter any additional comments here."></textarea>
+      </li><br><br>
+</ul>
+
+
+<!--Raffle Data to take input from user-->
+<label for="data">Raffle:</label>
+<input type="text" id="data" name="data" onBlur="winRaffle()" style="width: 300px;" placeholder="Please enter atleast 10 comma seperated numbers" />
+<p id="dataFieldError" style="color: red;"></p>
+
+<div class="col-75">
+<label>Result: <label id="result"></label></label>
+</div>
+
+<br><br><br><br>
+  
+
+<!-- Submit Button -->
+<div style="text-align: center;   background-color: #dae2e2;">
+  <br><span>Click here to SUBMIT or CANCEL</span><br><br>
+  <input style="margin-bottom: 10px;" type="submit" value="Submit" onclick="validateForm()"/>
+  <input style="margin-bottom: 10px;" type="reset" value=" Cancel " />
+</div>
+
+</form>
+
+</body>
+
+<!-- JavaScript -->
+<script type="text/javascript">
+
+//To check if user won a free movie ticket
+function winRaffle() 
+{
+    var userInput = document.getElementById("data").value;
+    var validRegex = /^[0-9,]+$/;
+
+    if (!userInput.match(validRegex)) 
+    {
+        document.getElementById('dataFieldError').innerHTML = "Wrong Format: Please enter only comma separated values between 1 to 100.";
+        return;
+    }
+    var numArr = userInput.split(",");
+    var parseNumArr= numArr.map(function(num) {
+        return parseInt(num, 10);
+      });
+
+    if(numArr.length < 10) 
+    {
+        document.getElementById("dataFieldError").innerHTML = "This field should contain at least ten comma separated values between 1 to 100.";
+  
+    } else
+    {
+        document.getElementById("dataFieldError").innerHTML = "";
+        var errorVal = 0;
+        var match = 0;
+        for (var k = 0; k < numArr.length; k++) 
+        {
+            numArr[k] = parseInt(numArr[k], 10);
+            if (numArr[k] < 1 || numArr[k] > 100 ) 
+            {
+                errorVal = 1;
+            }
+            if(numArr[k]==Math.ceil(Math.random() * 100))
+            {
+              match = match+1;
+            }
+        }
+
+        if (errorVal == 1) {
+            document.getElementById("dataFieldError").innerHTML = "Please enter numbers only between 1 to 100";
+        } else {
+            if(match==0)
+            {
+              document.getElementById("result").innerHTML = "<br>Better luck next time! You did not win a free movie ticket.";
+            } else if(match!=0){
+              document.getElementById("result").innerHTML = "<br>Congratulations! You won a free movie ticket.";
+            }
+        }
+    }
+}
+  
+
+  //FORM VALIDATION EVENT HANDLING
+  function validateForm()
+  {
+    var errorMessage = " ";
+
+    //Validating First Name
+    var userName = document.forms["StudentForm"]["fname"];
+    if(!userName.value.match(/^[a-zA-Z]+$/))
+    {
+        errorMessage = "The Name text box should contain only Alphabets."
+        userName.focus();
+        userName.value = "";
+    }
+
+    //Validating Last Name
+    var userName = document.forms["StudentForm"]["lname"];
+    if(!userName.value.match(/^[a-zA-Z]+$/))
+    {
+        errorMessage = "The Name text box should contain only Alphabets."
+        userName.focus();
+        userName.value = "";
+    }
+
+    //Validating Street Address
+    var street_Address = document.forms["StudentForm"]["street_address"];
+    if(!street_Address.value.match(/^(?:[Pp][Oo]\s[Bb][Oo][Xx]|[0-9]+)\s(?:[0-9A-Za-z\.'#]|[^\S\r\n])+/))
+    {
+        errorMessage = "The Address text boxes should contain only appropriate Numeric, Alphabet or Alphanumeric characters."
+        street_Address.focus();
+        street_Address.value = "";
+    }
+
+    //Validating Email Address
+    var emailAddress = document.forms["StudentForm"]["user_email"];
+    if(!emailAddress.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+    {
+        errorMessage = "The Email address format should be valid."
+        emailAddress.focus();
+        emailAddress.value = "";
+    }
+
+    //Validating Zip Code
+    var zipCode = document.forms["StudentForm"]["zip_code"];
+    if(!zipCode.value.match(/^[0-9]+$/))
+    {
+        errorMessage = "The ZIP code must contain only numeric values."
+        zipCode.focus();
+        zipCode.value = "";
+    }
+
+  }
+</script> 
+</html>
